@@ -100,120 +100,97 @@
     font-family: 'Playfair Display', serif;
   }
 
-  /* TOUCH DEVICES (mobile/tablet) — pointer: coarse is true regardless of "desktop site" mode */
-  @media (pointer: coarse) {
-    .Owl-landing {
-      bottom: 1rem !important;
-      right: 1rem !important;
-    }
-
-    /* Hide owl, branch, nest, baby owl on touch devices in resume stage */
-    .Owl {
-      display: none !important;
-    }
-
-    .NestWithEgg {
-      display: none !important;
-    }
-
-    [class*="Branch"] {
-      display: none !important;
-    }
-
-    .BabyOwl,
-    .BabyOwl-hatching,
-    .BabyOwl-flying {
-      display: none !important;
-    }
-
-    nav h2 {
-      font-size: 0.95rem !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 140px;
-    }
-    
-    nav {
-      width: 85vw !important;
-      max-width: 320px !important;
-    }
-    
-    nav > div:last-child {
-      position: fixed !important;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: inherit;
-      border-top: 1px solid hsl(var(--border) / 0.3);
-      z-index: 100;
-    }
-    
-    nav > div:nth-child(3) {
-      padding-bottom: 150px !important;
-    }
-
-    /* Disable scroll animations on touch devices */
-    .scroll-section {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
-    .scroll-section.slide-left,
-    .scroll-section.slide-right,
-    .scroll-section.slide-up {
-      transform: none;
-    }
+  /* MOBILE — touch devices OR small screens (covers Desktop Site mode too) */
+@media (pointer: coarse), (max-width: 768px) {
+  .Owl-landing {
+    bottom: 1rem !important;
+    right: 1rem !important;
   }
-  
-  /* DESKTOP (mouse/trackpad devices) — pointer: fine */
-  @media (pointer: fine) {
-    .Owl {
-      top: -1.1rem !important;
-      right: 9.4rem !important;
-    }
-    
-    .Owl-landing {
-      bottom: 2rem !important;
-      right: 2rem !important;
-    }
-    
-    .BabyOwl {
-      top: 2rem !important;
-      right: 6rem !important;
-    }
-    
-    .BabyOwl-hatching {
-      top: 1rem !important;
-      left: 5rem !important;
-      scale: 0;
-    }
-    
-    .BabyOwl-flying {
-      top: 1rem !important;
-      left: 3rem !important;
-    }
-    
-    .NestWithEgg {
-      top: -1rem !important;
-      left: 3rem !important;
-    }
-    
-    [class*="Branch"] {
-      display: block !important;
-    }
+
+  .Owl { display: none !important; }
+  .NestWithEgg { display: none !important; }
+  [class*="Branch"] { display: none !important; }
+  .BabyOwl,
+  .BabyOwl-hatching,
+  .BabyOwl-flying { display: none !important; }
+
+  nav h2 {
+    font-size: 0.95rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
   }
-  
-  html {
-    scroll-behavior: smooth;
+
+  nav {
+    width: 85vw !important;
+    max-width: 320px !important;
   }
-  
-  section {
-    scroll-margin-top: 2rem;
+
+  nav > div:last-child {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: inherit;
+    border-top: 1px solid hsl(var(--border) / 0.3);
+    z-index: 100;
+  }
+
+  nav > div:nth-child(3) {
+    padding-bottom: 150px !important;
+  }
+
+  .scroll-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-section.slide-left,
+  .scroll-section.slide-right,
+  .scroll-section.slide-up {
+    transform: none;
   }
 }
 
+/* DESKTOP — mouse/trackpad AND large screen (both conditions must be true) */
+@media (pointer: fine) and (min-width: 769px) {
+  .Owl {
+    top: -1.1rem !important;
+    right: 9.4rem !important;
+  }
+
+  .Owl-landing {
+    bottom: 2rem !important;
+    right: 2rem !important;
+  }
+
+  .BabyOwl {
+    top: 2rem !important;
+    right: 6rem !important;
+  }
+
+  .BabyOwl-hatching {
+    top: 1rem !important;
+    left: 5rem !important;
+    scale: 0;
+  }
+
+  .BabyOwl-flying {
+    top: 1rem !important;
+    left: 3rem !important;
+  }
+
+  .NestWithEgg {
+    top: -1rem !important;
+    left: 3rem !important;
+  }
+
+  [class*="Branch"] {
+    display: block !important;
+  }
+}
 @layer components {
   .parchment-texture {
     background-color: hsl(var(--parchment));
