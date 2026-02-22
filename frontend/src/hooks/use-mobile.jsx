@@ -2,17 +2,28 @@ import * as React from "react";
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState(
-    typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)').matches : false
+    typeof window !== 'undefined'
+      ? window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 769
+      : false
   );
 
   React.useEffect(() => {
-    const mql = window.matchMedia('(pointer: coarse)');
+    const pointerQuery = window.matchMedia('(pointer: coarse)');
+    const widthQuery = window.matchMedia('(max-width: 768px)');
+
     const onChange = () => {
-      setIsMobile(mql.matches);
+      setIsMobile(pointerQuery.matches || widthQuery.matches);
     };
-    mql.addEventListener("change", onChange);
-    setIsMobile(mql.matches);
-    return () => mql.removeEventListener("change", onChange);
+
+    pointerQuery.addEventListener("change", onChange);
+    widthQuery.addEventListener("change", onChange);
+
+    setIsMobile(pointerQuery.matches || widthQuery.matches);
+
+    return () => {
+      pointerQuery.removeEventListener("change", onChange);
+      widthQuery.removeEventListener("change", onChange);
+    };
   }, []);
 
   return isMobile;
