@@ -1,5 +1,5 @@
 import { Download } from 'lucide-react';
-import photo from './assets/photo.jpeg';
+import photo from '@/assets/photo.jpeg';
 
 const HomePage = () => {
   return (
