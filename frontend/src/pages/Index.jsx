@@ -120,15 +120,13 @@ const Index = () => {
     return () => { observers.forEach(obs => obs?.disconnect()); };
   }, [stage]);
 
-  // Owl click:
-  // - Landing stage: works identically on ALL devices (full animation)
-  // - Resume stage: desktop only (owl not rendered on mobile in resume)
   const handleOwlClick = useCallback(() => {
     if (stage === 'landing') {
       setShowHint(false);
       setIsLandingHiding(true);
       setOwlState('waking');
 
+      // Full landing animation plays on ALL devices (mobile + desktop)
       setTimeout(() => {
         setOwlState('flying');
         setShowMail(true);
@@ -136,12 +134,15 @@ const Index = () => {
         setTimeout(() => {
           setStage('resume');
           setShowMail(false);
-          setOwlState(darkMode ? 'sitting' : 'sleeping');
+          // Only set owl sitting/sleeping on desktop — mobile won't show owl in resume
+          if (!isMobile) {
+            setOwlState(darkMode ? 'sitting' : 'sleeping');
+          }
         }, 2500);
       }, 600);
 
     } else if (stage === 'resume') {
-      if (isMobile) return; // owl not shown in resume on mobile, safety guard
+      if (isMobile) return;
 
       if (darkMode) {
         setOwlState('disturbed');
@@ -243,9 +244,9 @@ const Index = () => {
       )}
 
       {/*
-        Owl rendering:
-        - Landing stage → show on ALL devices (full animation)
-        - Resume stage  → show on DESKTOP only
+        Owl:
+        - Landing stage → ALL devices (full animation plays everywhere)
+        - Resume stage  → DESKTOP ONLY
       */}
       {(stage === 'landing' || !isMobile) &&
         (owlState !== 'flyingAway' || stage !== 'resume') &&
