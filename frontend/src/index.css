@@ -106,6 +106,25 @@
       right: 1rem !important;
     }
 
+    /* Hide owl, branch, nest on mobile in resume stage */
+    .Owl {
+      display: none !important;
+    }
+
+    .NestWithEgg {
+      display: none !important;
+    }
+
+    [class*="Branch"] {
+      display: none !important;
+    }
+
+    .BabyOwl,
+    .BabyOwl-hatching,
+    .BabyOwl-flying {
+      display: none !important;
+    }
+
     nav h2 {
       font-size: 0.95rem !important;
       white-space: nowrap;
