@@ -99,7 +99,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
   }
-
+}
   /* MOBILE — touch devices OR small screens (covers Desktop Site mode too) */
 @media (pointer: coarse), (max-width: 768px) {
   .Owl-landing {
