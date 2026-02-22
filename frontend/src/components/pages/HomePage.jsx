@@ -1,7 +1,9 @@
 import { Download } from 'lucide-react';
 import photo from '@/assets/photo.jpeg';
+import {useIsMobile} from '@/hooks/use-mobile.jsx'
 
 const HomePage = () => {
+  const isMobile = useIsMobile();
   return (
     <div className="space-y-10">
       {/* Hero */}
@@ -60,11 +62,13 @@ const HomePage = () => {
         </div>
       </div>
 
+      if{!isMobile && (
       <div className="glass-card p-5 md:p-6 border-l-4 border-primary font-sans">
         <p className="text-sm md:text-base text-foreground leading-relaxed">
           <span className="font-semibold text-primary">💡 Interactive Tip:</span> Try clicking on the owl in different modes! In dark mode, the owl stays awake and alert. In light mode, it prefers to rest peacefully.
         </p>
       </div>
+      )}
     </div>
   );
 };
