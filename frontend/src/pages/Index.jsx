@@ -13,7 +13,7 @@ import ExperiencePage from '@/components/pages/ExperiencePage.jsx';
 import SkillsPage from '@/components/pages/SkillsPage.jsx';
 import ContactPage from '@/components/pages/ContactPage.jsx';
 import Branch from '@/components/Branch.jsx';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile.jsx';
 
 const PAGES = [
   { component: HomePage, label: 'Home' },
