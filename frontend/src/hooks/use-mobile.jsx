@@ -17,8 +17,7 @@ export function useIsMobile() {
 
     pointerQuery.addEventListener("change", onChange);
     widthQuery.addEventListener("change", onChange);
-
-    setIsMobile(pointerQuery.matches || widthQuery.matches);
+    onChange();
 
     return () => {
       pointerQuery.removeEventListener("change", onChange);
