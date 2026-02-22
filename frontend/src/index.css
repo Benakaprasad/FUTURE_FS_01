@@ -36,7 +36,6 @@
 
     --radius: 0.75rem;
 
-    /* Custom portfolio colors */
     --owl-body: 25 25% 42%;
     --owl-body-dark: 25 20% 32%;
     --owl-belly: 35 35% 70%;
@@ -102,13 +101,11 @@
   }
 
   @media (max-width: 768px) {
-    /* Owl position on landing page for mobile */
     .Owl-landing {
       bottom: 1rem !important;
       right: 1rem !important;
     }
 
-    /* Fix navigation menu name truncation on mobile */
     nav h2 {
       font-size: 0.95rem !important;
       white-space: nowrap;
@@ -117,13 +114,11 @@
       max-width: 140px;
     }
     
-    /* Navigation menu improvements for mobile */
     nav {
       width: 85vw !important;
       max-width: 320px !important;
     }
     
-    /* Ensure reset button is visible without scrolling */
     nav > div:last-child {
       position: fixed !important;
       bottom: 0;
@@ -134,15 +129,12 @@
       z-index: 100;
     }
     
-    /* Adjust navigation content area to account for fixed footer */
     nav > div:nth-child(3) {
       padding-bottom: 150px !important;
     }
   }
   
-  /* DESKTOP: Position owls higher on the tree */
   @media (min-width: 769px) {
-    /* Parent owl sits on TOP branch - right below toggle button */
     .Owl {
       top: -1.1rem !important;
       right: 9.4rem !important;
@@ -153,7 +145,6 @@
       right: 2rem !important;
     }
     
-    /* Baby owl sits to the RIGHT of mama on SAME branch */
     .BabyOwl {
       top: 2rem !important;
       right: 6rem !important;
@@ -170,24 +161,20 @@
       left: 3rem !important;
     }
     
-    /* Nest on LEFT SIDE of same branch */
     .NestWithEgg {
       top: -1rem !important;
       left: 3rem !important;
     }
     
-    /* Ensure tree is visible on desktop */
     [class*="Branch"] {
       display: block !important;
     }
   }
   
-  /* Smooth page scrolling */
   html {
     scroll-behavior: smooth;
   }
   
-  /* Fix section spacing */
   section {
     scroll-margin-top: 2rem;
   }
@@ -321,7 +308,7 @@
     transform-origin: center bottom;
   }
   
-  /* Scroll animations */
+  /* Scroll animations — desktop only */
   .scroll-section {
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -343,127 +330,80 @@
     opacity: 1;
     transform: translateX(0) translateY(0);
   }
+
+  /* Disable scroll animations on mobile */
+  @media (max-width: 768px) {
+    .scroll-section {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .scroll-section.slide-left,
+    .scroll-section.slide-right,
+    .scroll-section.slide-up {
+      transform: none;
+    }
+  }
 }
 
 @keyframes fly {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(-30vw, -20vh) rotate(-10deg);
-  }
-  50% {
-    transform: translate(-40vw, -35vh) rotate(5deg);
-  }
-  75% {
-    transform: translate(-35vw, -40vh) rotate(-5deg);
-  }
-  100% {
-    transform: translate(-40vw, -45vh) rotate(0deg);
-  }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-30vw, -20vh) rotate(-10deg); }
+  50% { transform: translate(-40vw, -35vh) rotate(5deg); }
+  75% { transform: translate(-35vw, -40vh) rotate(-5deg); }
+  100% { transform: translate(-40vw, -45vh) rotate(0deg); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes breathe {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
 }
 
 @keyframes flap {
-  0%, 100% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(0.85);
-  }
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.85); }
 }
 
 @keyframes flyAway {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100vw, -50vh) rotate(20deg);
-    opacity: 0;
-  }
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(100vw, -50vh) rotate(20deg); opacity: 0; }
 }
 
 @keyframes returnFly {
-  0% {
-    transform: translate(-100vw, -50vh) rotate(-20deg);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
+  0% { transform: translate(-100vw, -50vh) rotate(-20deg); opacity: 0; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
 }
 
 @keyframes wake {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 @keyframes drop {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100px) rotate(10deg);
-    opacity: 0;
-  }
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100px) rotate(10deg); opacity: 0; }
 }
 
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% center;
-  }
-  50% {
-    background-position: 100% center;
-  }
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
 }
 
 .animate-drop {
@@ -471,112 +411,49 @@
 }
 
 @keyframes hatch {
-  0% {
-    transform: scale(0) rotate(0deg);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.2) rotate(10deg);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
 @keyframes babyFly {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  20% {
-    transform: translate(20vw, -10vh) rotate(15deg);
-  }
-  40% {
-    transform: translate(40vw, -5vh) rotate(-10deg);
-  }
-  60% {
-    transform: translate(55vw, -12vh) rotate(8deg);
-  }
-  80% {
-    transform: translate(65vw, -8vh) rotate(-5deg);
-  }
-  100% {
-    transform: translate(calc(100vw - 280px), 0) rotate(0deg);
-  }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(20vw, -10vh) rotate(15deg); }
+  40% { transform: translate(40vw, -5vh) rotate(-10deg); }
+  60% { transform: translate(55vw, -12vh) rotate(8deg); }
+  80% { transform: translate(65vw, -8vh) rotate(-5deg); }
+  100% { transform: translate(calc(100vw - 280px), 0) rotate(0deg); }
 }
 
 @keyframes eggCrack {
-  0%, 20% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  30% {
-    transform: rotate(5deg);
-  }
-  35% {
-    transform: rotate(-5deg);
-  }
-  40% {
-    transform: rotate(5deg);
-  }
-  45%, 100% {
-    transform: rotate(0deg);
-  }
+  0%, 20% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  30% { transform: rotate(5deg); }
+  35% { transform: rotate(-5deg); }
+  40% { transform: rotate(5deg); }
+  45%, 100% { transform: rotate(0deg); }
 }
 
 @keyframes babyFlyAway {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100vw, -50vh) rotate(20deg);
-    opacity: 0;
-  }
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(100vw, -50vh) rotate(20deg); opacity: 0; }
 }
 
 @keyframes babyReturn {
-  0% {
-    transform: translate(-100vw, -50vh) rotate(-20deg);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
+  0% { transform: translate(-100vw, -50vh) rotate(-20deg); opacity: 0; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
 }
 
 @keyframes babyFlyAwayDelayed {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 1;
-  }
-  15% {
-    transform: translate(0, -10px) rotate(0deg) scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100vw, -50vh) rotate(20deg) scale(1);
-    opacity: 0;
-  }
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  15% { transform: translate(0, -10px) rotate(0deg) scale(1.05); opacity: 1; }
+  100% { transform: translate(100vw, -50vh) rotate(20deg) scale(1); opacity: 0; }
 }
 
 @keyframes babyReturnDelayed {
-  0% {
-    transform: translate(-100vw, -50vh) rotate(-20deg) scale(1);
-    opacity: 0;
-  }
-  85% {
-    transform: translate(0, -10px) rotate(0deg) scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-    opacity: 1;
-  }
+  0% { transform: translate(-100vw, -50vh) rotate(-20deg) scale(1); opacity: 0; }
+  85% { transform: translate(0, -10px) rotate(0deg) scale(1.05); opacity: 1; }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
 }
 
 @keyframes egg-shake {
