@@ -23,7 +23,7 @@ const HomePage = () => {
             Benaka Prasad M
           </h1>
           <a
-            href="/resume.pdf"
+            href="/BenakaResume.pdf"
             download="Benaka_Prasad_M_Resume.pdf"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-sans font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
           >
