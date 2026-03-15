@@ -42,21 +42,21 @@ const HomePage = () => {
         </h3>
         <div className="space-y-4 font-sans">
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            Full Stack Developer with hands-on experience building secure, role-based web applications
-            from the ground up — designing REST APIs, JWT authentication systems, and relational
-            database schemas in Node.js and PostgreSQL, through to interactive frontend interfaces
-            in React.js.
+            Full Stack Developer comfortable on both ends of the stack — building React.js interfaces
+            with responsive layouts, component architecture, and real-time UI interactions on the
+            frontend, and designing REST APIs, JWT authentication systems, and PostgreSQL schemas
+            on the backend.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            My projects span the full request lifecycle: a Gym Management System with Admin, Trainer,
-            and Customer role separation; a real-time Bingo game with WebSocket-driven multiplayer
-            rooms; and a Child Vaccination Reminder system integrating Twilio and Gmail OAuth2 for
-            automated multi-channel notifications.
+            On the frontend, I've built complete user-facing dashboards in React.js that consume
+            backend APIs — including role-specific views for Admin, Trainer, and Customer workflows.
+            On the backend, I've designed role-based access systems, integrated third-party APIs
+            like Twilio and Gmail OAuth2, and built real-time features using WebSockets.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            I focus on building systems that are predictable and maintainable — with clean API
-            contracts, indexed schemas, and frontend interfaces that consume them reliably. This
-            portfolio is itself a product of that approach.
+            I work across the full request lifecycle — from what the user sees and clicks, to the
+            API that handles it, to the database query that resolves it. This portfolio is itself
+            built with that same approach.
           </p>
         </div>
       </div>
