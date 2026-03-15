@@ -1,9 +1,7 @@
 import { Download } from 'lucide-react';
 import photo from '@/assets/photo.jpeg';
-import {useIsMobile} from '@/hooks/use-mobile.jsx'
 
 const HomePage = () => {
-  const isMobile = useIsMobile();
   return (
     <div className="space-y-10">
       {/* Hero */}
@@ -25,7 +23,7 @@ const HomePage = () => {
             Benaka Prasad M
           </h1>
           <a
-            href="/BenakaResume.pdf"
+            href="/resume.pdf"
             download="Benaka_Prasad_M_Resume.pdf"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-sans font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
           >
@@ -44,31 +42,30 @@ const HomePage = () => {
         </h3>
         <div className="space-y-4 font-sans">
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            Full Stack Developer with hands-on experience across the entire web stack from designing
-            REST APIs, JWT authentication systems, and relational database schemas in Node.js and
-            PostgreSQL, to building interactive frontend interfaces with React.js and modern CSS.
+            Full Stack Developer with hands-on experience building secure, role-based web applications
+            from the ground up — designing REST APIs, JWT authentication systems, and relational
+            database schemas in Node.js and PostgreSQL, through to interactive frontend interfaces
+            in React.js.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            On the frontend, I build complete user experiences including custom animations,
-            component architecture, responsive layouts, and real-time UI interactions as demonstrated
-            in this portfolio itself. On the backend, I design role-based access systems, integrate
-            third-party APIs, and structure databases for reliability and performance.
+            My projects span the full request lifecycle: a Gym Management System with Admin, Trainer,
+            and Customer role separation; a real-time Bingo game with WebSocket-driven multiplayer
+            rooms; and a Child Vaccination Reminder system integrating Twilio and Gmail OAuth2 for
+            automated multi-channel notifications.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-foreground">
-            I work across the full request lifecycle from what the user sees and clicks, to the API
-            that handles it, to the database query that resolves it. My focus is on building systems
-            that are predictable, maintainable, and easy for other developers to work with.
+            I focus on building systems that are predictable and maintainable — with clean API
+            contracts, indexed schemas, and frontend interfaces that consume them reliably. This
+            portfolio is itself a product of that approach.
           </p>
         </div>
       </div>
 
-      {!isMobile && (
       <div className="glass-card p-5 md:p-6 border-l-4 border-primary font-sans">
         <p className="text-sm md:text-base text-foreground leading-relaxed">
           <span className="font-semibold text-primary">💡 Interactive Tip:</span> Try clicking on the owl in different modes! In dark mode, the owl stays awake and alert. In light mode, it prefers to rest peacefully.
         </p>
       </div>
-      )}
     </div>
   );
 };
