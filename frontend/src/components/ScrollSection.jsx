@@ -7,7 +7,6 @@ const ScrollSection = ({ children, index }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Skip animation on mobile — show content immediately
     if (isMobile) {
       setIsVisible(true);
       return;
@@ -37,7 +36,6 @@ const ScrollSection = ({ children, index }) => {
     return directions[index % directions.length];
   };
 
-  // On mobile, render without animation classes
   if (isMobile) {
     return <div>{children}</div>;
   }

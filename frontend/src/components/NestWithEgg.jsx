@@ -1,5 +1,5 @@
 const NestWithEgg = ({ onEggClick, isHatched, isEggCracking, showBrokenEgg = false }) => {
-  // Don't render anything if fully hatched and baby owl has settled
+
   if (isHatched && !showBrokenEgg) return null;
 
   return (
@@ -8,7 +8,7 @@ const NestWithEgg = ({ onEggClick, isHatched, isEggCracking, showBrokenEgg = fal
       onClick={!isEggCracking && !showBrokenEgg ? onEggClick : undefined}
       title={!isEggCracking && !showBrokenEgg ? "Click me! 🥚" : ""}
     >
-      {/* Click me tooltip - only show before cracking */}
+      {/* Click me tooltip */}
       {!isEggCracking && !showBrokenEgg && (
         <div className="absolute top-6 -right-20 bg-primary text-primary-foreground px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap animate-bounce pointer-events-none shadow-xl border-2 border-primary-foreground/20">
           Click me!
@@ -104,7 +104,6 @@ const NestWithEgg = ({ onEggClick, isHatched, isEggCracking, showBrokenEgg = fal
 
           {/* Egg - with different states */}
           {showBrokenEgg ? (
-            // Show broken egg pieces (static)
             <g>
               {/* Bottom egg pieces */}
               <g>
@@ -163,15 +162,14 @@ const NestWithEgg = ({ onEggClick, isHatched, isEggCracking, showBrokenEgg = fal
               <circle cx="57" cy="69" r="1.2" fill="hsl(30, 25%, 70%)" opacity="0.4" />
             </g>
           ) : (
-            // Show intact or cracking egg
             <g className={isEggCracking ? 'animate-egg-crack' : 'animate-egg-shake'}>
               {/* Egg shadow */}
               <ellipse cx="50" cy="73" rx="12" ry="2" fill="hsl(0, 0%, 0%)" opacity="0.25" />
               
-              {/* Egg body - slightly larger and more detailed */}
+              {/* Egg body */}
               <ellipse cx="50" cy="62" rx="11" ry="14" fill="hsl(35, 30%, 88%)" stroke="hsl(35, 25%, 75%)" strokeWidth="1" />
               
-              {/* Crack lines - only show when cracking */}
+              {/* Crack lines */}
               {isEggCracking && (
                 <g>
                   <path d="M 50 52 L 48 58 L 51 64 L 47 68" stroke="hsl(25, 30%, 50%)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
@@ -187,7 +185,7 @@ const NestWithEgg = ({ onEggClick, isHatched, isEggCracking, showBrokenEgg = fal
               <ellipse cx="48" cy="66" rx="2" ry="2.5" fill="hsl(30, 25%, 70%)" opacity="0.4" />
               <ellipse cx="52" cy="59" rx="1.8" ry="2.2" fill="hsl(30, 25%, 70%)" opacity="0.35" />
               
-              {/* Egg highlight - makes it look shiny */}
+              {/* Egg highlight */}
               <ellipse cx="47" cy="56" rx="3.5" ry="5" fill="white" opacity="0.4" />
               <ellipse cx="46" cy="55" rx="2" ry="3" fill="white" opacity="0.3" />
             </g>

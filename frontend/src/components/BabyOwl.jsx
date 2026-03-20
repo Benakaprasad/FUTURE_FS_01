@@ -34,7 +34,7 @@ const BabyOwl = ({ stage, onLanded, parentOwlState, isDarkMode}) => {
           }
         }}
       >
-        {/* Baby owl speech bubble - positioned relative to baby owl div */}
+        {/* Baby owl speech bubble */}
         {showSpeechBubble && (
           <div 
             style={{

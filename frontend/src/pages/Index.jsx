@@ -48,7 +48,6 @@ const Index = () => {
   useEffect(() => { isEggHatchedRef.current = isEggHatched; }, [isEggHatched]);
   useEffect(() => { babyOwlStageRef.current = babyOwlStage; }, [babyOwlStage]);
 
-  // Check localStorage for hatched state on mount — desktop only
   useEffect(() => {
     if (isMobile) return;
     const hatched = localStorage.getItem('babyOwlHatched') === 'true';
@@ -59,7 +58,6 @@ const Index = () => {
     }
   }, [isMobile]);
 
-  // Branch visibility — desktop only
   useEffect(() => {
     if (isMobile) return;
     const parentOnBranch =
@@ -87,7 +85,6 @@ const Index = () => {
     }
   }, [darkMode]);
 
-  // Owl state on theme change — desktop only
   useEffect(() => {
     if (isMobile) return;
     if (
@@ -101,7 +98,6 @@ const Index = () => {
     }
   }, [darkMode, stage, isMobile]);
 
-  // Track active section for nav highlighting
   useEffect(() => {
     if (stage !== 'resume') return;
     const observers = sectionRefs.current.map((ref, idx) => {
@@ -126,7 +122,6 @@ const Index = () => {
       setIsLandingHiding(true);
       setOwlState('waking');
 
-      // Full landing animation plays on ALL devices (mobile + desktop)
       setTimeout(() => {
         setOwlState('flying');
         setShowMail(true);
@@ -134,7 +129,6 @@ const Index = () => {
         setTimeout(() => {
           setStage('resume');
           setShowMail(false);
-          // Only set owl sitting/sleeping on desktop — mobile won't show owl in resume
           if (!isMobile) {
             setOwlState(darkMode ? 'sitting' : 'sleeping');
           }
@@ -222,7 +216,6 @@ const Index = () => {
     <div className="min-h-screen bg-background transition-colors duration-500 relative">
       <ParticleBackground isDarkMode={darkMode} />
 
-      {/* ── DESKTOP ONLY in resume stage ── */}
       {!isMobile && stage === 'resume' && <Branch />}
 
       {!isMobile && stage === 'resume' && (
@@ -243,11 +236,6 @@ const Index = () => {
         />
       )}
 
-      {/*
-        Owl:
-        - Landing stage → ALL devices (full animation plays everywhere)
-        - Resume stage  → DESKTOP ONLY
-      */}
       {(stage === 'landing' || !isMobile) &&
         (owlState !== 'flyingAway' || stage !== 'resume') &&
         owlState !== 'returning' && (
@@ -281,7 +269,7 @@ const Index = () => {
         />
       )}
 
-      {/* Landing stage — identical on ALL devices */}
+      {/* Landing stage */}
       {stage === 'landing' && (
         <LandingStage
           showHint={showHint}

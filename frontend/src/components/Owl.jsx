@@ -14,7 +14,6 @@ const Owl = ({ state, isDarkMode, stage, onClick, showMail = false }) => {
 
   const isAsleep = state === 'sleeping' || (!isDarkMode && stage === 'resume' && state !== 'flapping' && state !== 'waking');
 
-  // Special positioning for landing stage
   const positionClass = stage === 'landing' ? 'Owl-landing' : 'Owl';
 
   return (
@@ -98,7 +97,7 @@ const Owl = ({ state, isDarkMode, stage, onClick, showMail = false }) => {
       )}
 
       <svg width="100" height="130" viewBox="0 0 120 150" className="drop-shadow-lg w-20 h-26 md:w-[100px] md:h-[130px]">
-        {/* Landing page branch only - inside main owl SVG */}
+        {/* Landing page branch */}
         {stage === 'landing' && state !== 'flying' && state !== 'flyingAway' && (
           <g>
             <path 

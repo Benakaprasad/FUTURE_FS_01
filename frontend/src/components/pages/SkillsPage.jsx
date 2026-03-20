@@ -54,7 +54,7 @@ const SkillsPage = () => {
 
       </div>
 
-      {/* ── INFINITE SCROLL — UNTOUCHED ── */}
+      {/* Infinite Scroll */}
       <div className="relative py-16 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-[5] pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-[5] pointer-events-none" />
@@ -78,7 +78,7 @@ const SkillsPage = () => {
         </div>
       </div>
 
-      {/* Skills by Category — table-style rows, no chips */}
+      {/* Skills by Category */}
       <div>
         <h3 className="font-display text-2xl md:text-3xl text-foreground mb-6">
           Skills by Category
@@ -102,7 +102,7 @@ const SkillsPage = () => {
         </div>
       </div>
 
-      {/* Soft Skills — clean inline text */}
+      {/* Soft Skills */}
       <div className="glass-card p-6 md:p-8 border-l-4 border-primary">
         <h3 className="font-display text-xl md:text-2xl text-foreground mb-3">
           Soft Skills
@@ -112,7 +112,7 @@ const SkillsPage = () => {
         </p>
       </div>
 
-      {/* Certifications — clean list rows */}
+      {/* Certifications */}
       <div>
         <h3 className="font-display text-2xl md:text-3xl text-foreground mb-5">
           Certifications

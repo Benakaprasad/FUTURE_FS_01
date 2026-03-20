@@ -29,8 +29,6 @@ const Navigation = ({ currentPage, onPageChange, babyOwlHatched, onResetEgg, isM
     setIsOpen(false);
   };
 
-  // Desktop: hide nav until egg is hatched (original behaviour)
-  // Mobile: always show nav — no egg animation to wait for
   if (!isMobile && !babyOwlHatched) {
     return null;
   }
@@ -147,7 +145,7 @@ const Navigation = ({ currentPage, onPageChange, babyOwlHatched, onResetEgg, isM
           })}
         </div>
 
-        {/* Footer — Reset button hidden on mobile */}
+        {/* Footer */}
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-border/20 glass-card space-y-4">
           {!isMobile && (
             <button

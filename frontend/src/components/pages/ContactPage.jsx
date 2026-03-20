@@ -76,7 +76,7 @@ const ContactPage = () => {
         ))}
       </div>
 
-      {/* Availability — clean bullet list, no chips */}
+      {/* Availability */}
       <div className="glass-card p-6 md:p-8 border-l-4 border-primary">
         <h3 className="font-display text-xl md:text-2xl text-foreground mb-4">
           Currently Available For

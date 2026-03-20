@@ -100,7 +100,7 @@
     font-family: 'Playfair Display', serif;
   }
 }
-  /* MOBILE — touch devices OR small screens (covers Desktop Site mode too) */
+
 @media (pointer: coarse), (max-width: 768px) {
   .Owl-landing {
     bottom: 1rem !important;
@@ -154,7 +154,6 @@
   }
 }
 
-/* DESKTOP — mouse/trackpad AND large screen (both conditions must be true) */
 @media (pointer: fine) and (min-width: 769px) {
   .Owl {
     top: -1.1rem !important;

@@ -55,7 +55,7 @@ const ExperiencePage = () => {
         </p>
       </div>
 
-      {/* Projects — 3-column horizontal grid on desktop */}
+      {/* Projects */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {projects.map((project, idx) => (
           <div
@@ -82,7 +82,7 @@ const ExperiencePage = () => {
               {project.description}
             </p>
 
-            {/* Tech Stack — dot-separated inline text, no chips */}
+            {/* Tech Stack */}
             <p className="font-sans text-xs md:text-sm text-muted-foreground mb-4 leading-relaxed">
               <span className="font-semibold text-foreground">Stack: </span>
               {project.tech.join(' · ')}

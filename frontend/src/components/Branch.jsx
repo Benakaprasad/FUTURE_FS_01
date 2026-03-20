@@ -18,7 +18,7 @@ const Branch = () => {
         </defs>
         
         <g>
-          {/* Main trunk - from bottom to top, thick to thin, slightly wavy */}
+          {/* Main trunk */}
           <path 
             d="M 320 800 Q 315 700 310 600 Q 308 500 305 400 Q 300 300 297 200 Q 293 100 290 50"
             fill="none" 
@@ -56,7 +56,7 @@ const Branch = () => {
           <ellipse cx="298" cy="280" rx="5" ry="3.5" fill="hsl(25, 35%, 28%)" opacity="0.7" />
           <ellipse cx="295" cy="160" rx="5" ry="3" fill="hsl(25, 35%, 28%)" opacity="0.7" />
           
-          {/* ⭐ MAIN TOP BRANCH - LONG & WAVY for BOTH owls to sit together */}
+          {/*  MAIN TOP BRANCH  */}
           <path 
             d="M 290 120 Q 260 115 230 118 Q 200 122 170 118 Q 140 114 110 118 Q 80 123 50 118"
             fill="none" 
@@ -182,7 +182,7 @@ const Branch = () => {
           <path d="M 340 358 L 348 352" stroke="hsl(25, 45%, 32%)" strokeWidth="3" strokeLinecap="round" />
           <path d="M 255 360 L 250 368" stroke="hsl(25, 45%, 32%)" strokeWidth="3" strokeLinecap="round" />
           
-          {/* Leaves on MAIN TOP branch (where both owls sit) */}
+          {/* Leaves on MAIN TOP branch */}
           <ellipse cx="60" cy="115" rx="8" ry="4" fill="hsl(140, 40%, 35%)" transform="rotate(-25, 60, 115)" />
           <ellipse cx="110" cy="116" rx="8" ry="4" fill="hsl(140, 40%, 35%)" transform="rotate(18, 110, 116)" />
           <ellipse cx="170" cy="116" rx="7" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(-12, 170, 116)" />
@@ -226,7 +226,6 @@ const Branch = () => {
           <ellipse cx="240" cy="438" rx="10" ry="6" fill="hsl(140, 35%, 40%)" opacity="0.6" transform="rotate(-10, 240, 438)" />
           <ellipse cx="245" cy="615" rx="9" ry="5" fill="hsl(140, 35%, 40%)" opacity="0.6" transform="rotate(16, 245, 615)" />
           
-          {/* ⭐ NEW ADDITIONAL LEAVES START ⭐ */}
           {/* More leaves on other branches for balance */}
           <ellipse cx="240" cy="188" rx="6" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(14, 240, 188)" />
           <ellipse cx="195" cy="185" rx="6" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(-25, 195, 185)" />
@@ -235,9 +234,7 @@ const Branch = () => {
           <ellipse cx="240" cy="446" rx="6" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(-14, 240, 446)" />
           <ellipse cx="200" cy="443" rx="6" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(16, 200, 443)" />
           <ellipse cx="160" cy="448" rx="6" ry="3" fill="hsl(140, 40%, 35%)" transform="rotate(-20, 160, 448)" />
-          {/* ⭐ NEW ADDITIONAL LEAVES END ⭐ */}
-
-          {/* ⭐ NEW FLOWERS START ⭐ */}
+          
           {/* Pink flowers on main branch */}
           <g>
             {/* Flower 1 */}
@@ -309,7 +306,6 @@ const Branch = () => {
             <circle cx="207.5" cy="622.5" r="1.5" fill="hsl(0, 0%, 98%)" />
             <circle cx="205" cy="621" r="1" fill="hsl(45, 100%, 60%)" />
           </g>
-          {/* ⭐ NEW FLOWERS END ⭐ */}
 
           {/* Branch knots for detail */}
           <circle cx="230" cy="116" r="3.5" fill="hsl(25, 35%, 32%)" opacity="0.6" />
